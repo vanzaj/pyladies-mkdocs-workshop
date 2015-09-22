@@ -1,0 +1,8 @@
+.reveal .align-left { text-align: left; }
+
+.reveal .align-right { text-align: right; }
+
+.reveal .valign-middle {
+  height: 100%;
+  vertical-align: middle;
+}

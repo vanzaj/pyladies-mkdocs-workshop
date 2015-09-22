@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Documentation with mkdocs</title>
+
+    <meta name="description" content="PyLadiesSG workshop on writing and managing docs using Markdown, mkdocs and git">
+    <meta name="author" content="Ivan <@vanzaj>">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/theme/serif.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h2>Documentation with <code>mkdocs</code></h2>
+          <h4>simple and effective tool for creating beautiful docs</h4>
+          <p>
+          <small>Ivan <a href="http://github.com/vanzaj">(@vanzaj)</a></small>
+          </p>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Plan
+
+            1. why bother
+            2. documentation as code
+            3. getting started with `mkdocs`
+            4. `git` 101
+            5. more `mkdocs`
+            6. publishing on github
+          </script>
+        </section>
+        <section data-background="#222">
+          <img src="img/djuna_barnes.jpg" class="stretch"
+               alt="force feeding" >
+        </section>
+      <section>
+        <section>
+          <img src="img/wtf-per-min.png" class="stretch"
+               alt="code quality measure" >
+        </section>
+        <section>
+          <h4><a href="http://www.slideshare.net/coordt/documentation-driven-development">
+              Documentation Driven Development</a></h4>
+          <img src="img/ddd.png" class="stretch"
+               alt="Documentation Driven Development">
+        </section>
+        <section>
+          <h4>Readme Driven Development</h4>
+          <img src="img/rdd.png" class="stretch"
+               alt="Readme Driven Development">
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            #### [Ch. 2 of "Test Driven Development with Python"](http://chimera.labs.oreilly.com/books/1234000000754/)
+
+                from selenium import webdriver
+
+                browser = webdriver.Firefox()
+
+                # Edith has heard about a cool new online to-do app. She goes
+                # to check out its homepage
+                browser.get('http://localhost:8000')
+
+                # She notices the page title and header mention to-do lists
+                assert 'To-Do' in browser.title
+
+                # She is invited to enter a to-do item straight away
+
+                # She types "Buy peacock feathers" into a text box (Edith's hobby
+                # is tying fly-fishing lures)
+
+                # When she hits enter, the page updates, and now the page lists
+                # "1: Buy peacock feathers" as an item in a to-do list
+                ...
+          </script>
+        </section>
+        <section>
+          <h3>Write Greate Documentation</h3>
+          <table><tr>
+              <td class="valign-middle">
+                <img src="img/jkm-writing-docs.png" style="width: 95%"
+                     alt="Jacob talking about docs writing">
+              </td>
+              <td class="valign-middle">
+                <blockquote>
+                  <p>"... great documentation is what drives developer adoption."</p>
+                  <p><cite>&mdash; Jacob Kaplan-Moss</cite></p>
+                </blockquote>
+              </td>
+            </tr></table>
+        </section>
+        <section>
+          <h2>Django...</h2>
+          &nbsp; <br />
+          <ul>
+            <li>~80,000 lines of Python</li>
+            <li>~120,000 lines of English</li>
+            <li>4x the length of the New Testament</li>
+            <li>2x the length of Infinite Jest</li>
+          </ul>
+        </section>
+        <section>
+          <h2><a href="https://jacobian.org/writing/what-to-write/">What to write</a></h2>
+          &nbsp; <br />
+          <ul>
+            <li>step-by-step tutorials</li>
+            <li>overviews and topical guides</li>
+            <li>low-level reference material</li>
+          </ul>
+          &nbsp;<br />
+          <blockquote>
+             Auto-generated documentation is almost worthless...
+             most of the time it’s easier just to read the source than to navigate
+             the bullshit that these autodoc tools produce.
+          </blockquote>
+        </section>
+        <section>
+          <a href="http://www.writethedocs.org">
+          <img src="img/wtd-home.png" class="stretch"
+               alt="Write the docs home page">
+          </a>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <a href="https://docs.python.org/">
+          <img src="img/python-docs-sphinx.png" class="stretch"
+                 alt="Python docs with Sphinx">
+          </a>
+        </section>
+        <section>
+          <a href="http://sphinx-doc.org">
+          <img src="img/sphinx-home.png" class="stretch"
+               alt="Sphinx project home page">
+          </a>
+        </section>
+        <section>
+          <a href="http://docutils.sourceforge.net/rst.html">
+          <img src="img/rst-docutils.png" class="stretch"
+               alt="ReStructuredText home page">
+          </a>
+        </section>
+        <section>
+          <a href="https://read-the-docs.readthedocs.org/">
+          <img src="img/rtd-theme.png" class="stretch"
+               alt="Read The Docs theme">
+          </a>
+        </section>
+        <section>
+          <a href="http://www.mkdocs.org">
+          <img src="img/mkdocs-home.png" class="stretch"
+               alt="MkDocs project home page">
+          </a>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h2>Documentation as code</h2>
+
+          <ul>
+            <li>treat it as a separate project</li>
+            <li>separate content from presentation</li>
+            <li>must be under version control</li>
+            <li>automate processing &amp; publishing steps</li>
+          </ul>
+        </section>
+        <section>
+          <a href="http://pugs.org.sg">
+          <img src="img/pugs-github.png" class="stretch"
+               alt="PUGS home page">
+          </a>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <script type="text/template">
+          ## Docs project setup
+
+          Install
+
+              $ mkvirtualenv aproj
+              $ pip install mkdocs
+
+          Initialize
+
+              $ cd some/proj/dir
+              $ mkdocs new aproj-docs
+
+          Check
+
+              $ cd aproj-docs
+              $ mkdocs serve
+              INFO    -  Building documentation...
+              [I 150922 00:04:08 server:271] Serving on http://127.0.0.1:8000
+
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+          ## Structure
+
+          * configuation file ([yaml](http://yaml.org/))
+          * actual content inside `docs/` ([markdown](http://daringfireball.net/projects/markdown/))
+
+
+              $ tree
+              .
+              ├── docs
+              │   └── index.md
+              └── mkdocs.yml
+
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+          ## Config file
+
+              $ cat mkdocs.yml
+
+              site_name: Fancy project
+              theme: readthedocs
+              pages:
+                - Home: index.md
+                - About: about.md
+            </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+          ## Building
+
+              $ mkdocs build
+              $ tree -L 2
+              .
+              ├── docs
+              │   ├── about.md
+              │   └── index.md
+              ├── mkdocs.yml
+              └── site
+                  ├── about
+                  ├── css
+                  ├── fonts
+                  ├── img
+                  ├── index.html
+                  ├── js
+                  ├── license
+                  ├── mkdocs
+                  ├── search.html
+                  └── sitemap.xml
+            </script>
+        </section>
+        <section>
+          <h2>Things to try</h2>
+
+          <ul>
+            <li>files organization in subsections</li>
+            <li>links to internal pages</li>
+            <li>links to internal images</li>
+          </ul>
+        </section>
+      </section>
+      </div> <!-- .slides -->
+    </div> <!-- .reveal -->
+
+    <script src="js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'js/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'js/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'js/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'js/zoom-js/zoom.js', async: true },
+          { src: 'js/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>
