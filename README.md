@@ -1,6 +1,6 @@
 # PyLadiesSG documentation workshop
 
-When: Tuesday, September 22, 7:00pm
+When: Tuesday, September 22, 7:00pm  
 Where: PayPal office at 5 Temasek Boulevard, Level 7, Suntec Tower 5, Singapore 038985
 (Google Maps link: https://goo.gl/maps/UDoxt)
 
@@ -13,3 +13,5 @@ We will cover the following topics:
 5. docs config file, add pages, change theme
 6. more content, markdown, internal links, images,...
 7. git branches, publish docs on github pages
+
+[slides](http://vanzaj.github.io/pyladies-mkdocs-workshop/)
