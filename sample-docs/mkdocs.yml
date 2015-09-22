@@ -1,0 +1,8 @@
+site_name: Sample project
+theme: readthedocs
+pages:
+  - Home: index.md
+  - User Guide:
+      - Introduction: user-guide/intro.md
+      - 'Technical details': user-guide/tech-details.md
+  - About: about.md
